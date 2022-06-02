@@ -11,14 +11,15 @@ import {
 } from 'botbuilder';
 import { TurnBot } from './app/bot';
 import { PizzaOrderingDialog } from './app/pizza.dialog';
+import { environment } from './environments/environment.prod';
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
 
-const server = app.listen(3978, () => {
-  console.log('PIZZA BOT LISTENING ON PORT ', 3978);
+app.listen(environment.port, () => {
+  console.log('PIZZA BOT LISTENING ON PORT ', environment.port);
 });
 
 const credentialsFactory = new ConfigurationServiceClientCredentialFactory({

@@ -7,14 +7,15 @@ import {
   createBotFrameworkAuthenticationFromConfiguration,
 } from 'botbuilder';
 import { EchoBot } from './app/echo.bot';
+import { environment } from './environments/environment';
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
 
-const server = app.listen(3978, () => {
-  console.log('ECHO BOT LISTENING ON PORT ', 3978);
+app.listen(environment.port, () => {
+  console.log('ECHO BOT LISTENING ON PORT ', environment.port);
 });
 
 const credentialsFactory = new ConfigurationServiceClientCredentialFactory({

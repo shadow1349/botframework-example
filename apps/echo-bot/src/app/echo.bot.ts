@@ -1,4 +1,4 @@
-import { ActivityHandler, MessageFactory, TurnContext } from 'botbuilder';
+import { ActivityHandler, MessageFactory } from 'botbuilder';
 
 export class EchoBot extends ActivityHandler {
   constructor() {
